@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ✏️ EDITE: título que aparece na aba do navegador -->
+    <title>José e Geovanna · Nosso Casamento</title>
+    <meta name="description" content="Compartilhe suas fotos e vídeos do nosso grande dia 💛">
+    <meta name="theme-color" content="#9E5A34">
+
+    <!-- Preview bonito ao compartilhar no WhatsApp / redes.
+       ✏️ Depois de publicar, troque a URL de og:image pelo endereço completo,
+       ex.: https://seusite.com/media/hero-wide.jpg -->
+    <meta property="og:title" content="José e Geovanna · Nosso Casamento">
+    <meta property="og:description" content="Compartilhe suas fotos e vídeos do nosso grande dia 💛">
+    <meta property="og:image" content="media/hero-wide.jpg">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon em emoji (não precisa de arquivo) -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💍</text></svg>">
+
+    <!-- Fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+    <main class="card">
+        <figure class="hero">
+            <picture>
+                <!-- Em telas largas, usa a foto horizontal; no celular, a vertical -->
+                <source media="(min-width: 720px)" srcset="media/hero-wide.jpg">
+                <img src="media/hero.jpg" alt="O casal de testas coladas, sorrindo, no dia do casamento"
+                    fetchpriority="high">
+            </picture>
+        </figure>
+
+        <div class="content">
+            <p class="eyebrow">Enfim, casados</p>
+
+            <!-- ✏️ EDITE: nomes do casal -->
+            <h1 class="names">José <span>&amp;</span> Geovanna</h1>
+
+            <div class="ornament" aria-hidden="true"><span></span>&#10086;<span></span></div>
+
+            <!-- ✏️ EDITE: data (e local, se quiser) -->
+            <p class="date">05 de setembro de 2026</p>
+
+            <p class="message">
+                Os momentos mais lindos deste dia aconteceram pelo olhar de vocês.
+                Compartilhe suas fotos e vídeos e ajude a gente a eternizar cada lembrança.
+            </p>
+
+            <!-- ✏️ EDITE: cole aqui o link da SUA pasta do Google Drive (entre as aspas) -->
+            <a class="cta"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSfK2ZD5cSgohfS9Iusf98T9swUokpgbMtjXsnJ9IisdSbAMFg/viewform?usp=publish-editor"
+                target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+                    <circle cx="12" cy="13" r="4" />
+                </svg>
+                Enviar fotos e vídeos
+            </a>
+
+            <p class="hint">Você irá para a pasta no Google Drive</p>
+
+            <p class="footer">"Para que todos saibam e juntamente entendam, que a mão do senhor fez isso"</p>
+        </div>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,175 @@
+/* ============================================================
+   Landing do casamento — visual quente, elegante e responsivo
+   Paleta inspirada nas fotos: marfim, terracota e verde suave
+   ============================================================ */
+
+:root{
+  --bg:        #ECE1D3;   /* fundo (areia quente)        */
+  --card:      #FBF6EF;   /* cartão (marfim)             */
+  --ink:       #453A30;   /* texto principal (marrom)    */
+  --ink-soft:  #8C7B69;   /* texto secundário            */
+  --accent:    #9E5A34;   /* terracota (botão / detalhes)*/
+  --accent-dk: #854927;   /* terracota escuro (hover)    */
+  --line:      #E4D7C6;   /* linhas / divisórias         */
+  --shadow:    0 24px 60px -20px rgba(76, 55, 36, .35);
+}
+
+*{ margin:0; padding:0; box-sizing:border-box; }
+
+html{ -webkit-text-size-adjust:100%; }
+
+body{
+  font-family:'Montserrat', system-ui, -apple-system, sans-serif;
+  color:var(--ink);
+  line-height:1.6;
+  background:
+    radial-gradient(1200px 600px at 50% -10%, #F6EEE2, transparent),
+    var(--bg);
+  min-height:100vh;
+  min-height:100dvh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px 16px;
+}
+
+/* ---------- cartão ---------- */
+.card{
+  width:100%;
+  max-width:460px;
+  background:var(--card);
+  border-radius:22px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  animation:rise .8s cubic-bezier(.2,.7,.2,1) both;
+}
+
+/* ---------- foto ---------- */
+.hero{ position:relative; }
+.hero img{
+  display:block;
+  width:100%;
+  height:clamp(290px, 47vh, 440px);
+  object-fit:cover;
+  object-position:center 32%;
+}
+.hero::after{                       /* dissolve a base da foto no cartão */
+  content:"";
+  position:absolute; inset:0;
+  background:linear-gradient(to bottom, transparent 62%, rgba(251,246,239,.92));
+  pointer-events:none;
+}
+
+/* ---------- conteúdo ---------- */
+.content{
+  position:relative;
+  margin-top:-26px;                 /* sobe por cima do degradê */
+  padding:6px 26px 34px;
+  text-align:center;
+}
+
+.eyebrow{
+  font-size:.72rem;
+  letter-spacing:.34em;
+  text-transform:uppercase;
+  color:var(--accent);
+  font-weight:500;
+  margin-bottom:4px;
+}
+
+.names{
+  font-family:'Cormorant Garamond', Georgia, serif;
+  font-weight:600;
+  font-size:clamp(2.6rem, 12vw, 3.5rem);
+  line-height:1.04;
+}
+.names span{
+  font-style:italic;
+  font-weight:400;
+  color:var(--accent);
+  padding:0 .1em;
+}
+
+.ornament{
+  display:flex; align-items:center; justify-content:center; gap:12px;
+  color:var(--accent);
+  margin:10px 0 6px;
+  font-size:1rem;
+}
+.ornament span{
+  height:1px; width:48px;
+  background:linear-gradient(to right, transparent, var(--line));
+}
+.ornament span:last-child{
+  background:linear-gradient(to left, transparent, var(--line));
+}
+
+.date{
+  font-family:'Cormorant Garamond', Georgia, serif;
+  font-size:1.2rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+  margin-bottom:16px;
+}
+
+.message{
+  font-size:.95rem;
+  font-weight:300;
+  max-width:34ch;
+  margin:0 auto 20px;
+}
+
+/* ---------- botão ---------- */
+.cta{
+  display:inline-flex; align-items:center; justify-content:center; gap:10px;
+  width:100%;
+  padding:16px 22px;
+  border-radius:100px;
+  background:var(--accent);
+  color:#FFF9F2;
+  font-family:'Montserrat', sans-serif;
+  font-size:1rem;
+  font-weight:500;
+  letter-spacing:.02em;
+  text-decoration:none;
+  box-shadow:0 12px 24px -10px rgba(158,90,52,.7);
+  transition:transform .18s ease, background .18s ease, box-shadow .18s ease;
+}
+.cta:hover{
+  background:var(--accent-dk);
+  transform:translateY(-2px);
+  box-shadow:0 18px 30px -12px rgba(158,90,52,.75);
+}
+.cta:active{ transform:translateY(0); }
+.cta:focus-visible{ outline:3px solid rgba(158,90,52,.45); outline-offset:3px; }
+.cta svg{ flex:none; }
+
+.hint{
+  font-size:.75rem;
+  color:var(--ink-soft);
+  margin-top:12px;
+}
+
+.footer{
+  font-family:'Cormorant Garamond', Georgia, serif;
+  font-size:1.15rem;
+  color:var(--ink-soft);
+  margin-top:24px;
+}
+
+/* ---------- animação ---------- */
+@keyframes rise{
+  from{ opacity:0; transform:translateY(16px); }
+  to  { opacity:1; transform:none; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .card{ animation:none; }
+  .cta{ transition:none; }
+}
+
+/* ---------- telas maiores ---------- */
+@media (min-width:720px){
+  .hero img{ height:320px; }
+}
