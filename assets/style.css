@@ -6,10 +6,10 @@
 :root{
   --bg:        #ECE1D3;   /* fundo (areia quente)        */
   --card:      #FBF6EF;   /* cartão (marfim)             */
-  --ink:       #453A30;   /* texto principal (marrom)    */
+  --ink:       #3D4F2A;   /* texto principal (marrom)    */
   --ink-soft:  #8C7B69;   /* texto secundário            */
-  --accent:    #9E5A34;   /* terracota (botão / detalhes)*/
-  --accent-dk: #854927;   /* terracota escuro (hover)    */
+  --accent:    #21382b;   /* terracota (botão / detalhes)*/
+  --accent-dk: #15231b;   /* terracota escuro (hover)    */
   --line:      #E4D7C6;   /* linhas / divisórias         */
   --shadow:    0 24px 60px -20px rgba(76, 55, 36, .35);
 }
@@ -49,9 +49,9 @@ body{
 .hero img{
   display:block;
   width:100%;
-  height:clamp(290px, 47vh, 440px);
+  height:clamp(270px, 42vh, 420px);
   object-fit:cover;
-  object-position:center 32%;
+  object-position:center 70%;
 }
 .hero::after{                       /* dissolve a base da foto no cartão */
   content:"";
@@ -154,6 +154,7 @@ body{
 .footer{
   font-family:'Cormorant Garamond', Georgia, serif;
   font-size:1.15rem;
+  font-style: italic;
   color:var(--ink-soft);
   margin-top:24px;
 }
